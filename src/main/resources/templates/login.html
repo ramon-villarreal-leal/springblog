@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="/partials/partials :: navbar"></nav>
+
+    <h1>Welcome to loginpage</h1>
+    <h3>Welcome <span th:text="${username}"></span></h3>
+    <h3>password is <span th:text="${password}"></span></h3>
+<div th:if = "${isLoggedIn}">
+    <ul th:each="ad : ${ads}">
+        <li th:text="${ad}"></li>
+    </ul>
+</div>
+    <form action="/login" method="post">
+        <label for="username">USername:</label>
+        <input type="text" name="username" id="username">
+
+        <label for="password">password</label>
+        <input type="text" name="password" id="password">
+        <button>Submit</button>
+    </form>
+
+    <footer th:replace="/partials/partials :: footer"></footer>
+</body>
+</html>
