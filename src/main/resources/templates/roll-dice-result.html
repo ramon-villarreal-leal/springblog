@@ -7,7 +7,14 @@
 
 </head>
 <body>
-    <h1>You chose number: <span th:text="${n}"></span></h1>
+<nav th:replace="/partials/partials :: navbar"></nav>
+
+
+<h1>You chose number: <span th:text="${n}"></span></h1>
     <h1>The correct number is: <span th:text="${diceNumber}"></span> </h1>
+    <h1 th:text="${message}"></h1>
+
+<footer th:replace="/partials/partials :: footer"></footer>
+
 </body>
 </html>
