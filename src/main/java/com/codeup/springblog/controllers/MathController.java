@@ -1,4 +1,4 @@
-package com.codeup.springblog;
+package com.codeup.springblog.controllers;
 
 import org.apache.coyote.Request;
 import org.springframework.stereotype.Controller;

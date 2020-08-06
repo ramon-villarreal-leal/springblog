@@ -6,8 +6,20 @@
 </head>
 <body>
     <div th:each="post : ${posts}">
-        <p><span th:text="${posts.title}"></span></p>
+        <h1><span th:text="${post.title}"></span></h1>
         <p><span th:text="${post.body}"></span></p>
+        <form action="/posts/delete" method="post">
+            <input type="hidden" name="deleteButton" th:value="${post.id}">
+            <button>Delete</button>
+        </form>
+
+        <form action="/posts/edit" method="post">
+            <textarea type="text" name="editTitle" th:value="${post.title}" th:text="${post.title}"></textarea>
+            <textarea type="text" name="editBody" th:value="${post.body}" th:text="${post.body}"></textarea>
+            <input type="hidden" name="editId" th:value="${post.id}">
+            <button name="editButton">Edit</button>
+        </form>
+
     </div>
 </body>
 </html>
