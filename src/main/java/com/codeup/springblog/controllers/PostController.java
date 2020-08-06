@@ -13,13 +13,13 @@ import java.util.ArrayList;
 public class PostController {
     //start of exercise
     //dependency injection
-    private final UserRepository usersDao;
-
-    public PostController(PostRepository usersDao){
-
-    }
-
-
+//    private final UserRepository usersDao;
+//
+//    public PostController(PostRepository usersDao){
+//
+//    }
+//
+//
     private final PostRepository postsDao;
 
     public PostController(PostRepository postsDao) {
