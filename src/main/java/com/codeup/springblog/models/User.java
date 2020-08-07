@@ -11,9 +11,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private List<Post> posts;
-
     @Column(nullable = false, length = 150, unique = true)
     private String username;
 
@@ -22,6 +19,9 @@ public class User {
 
     @Column(nullable = false, length = 150)
     private String password;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Post> posts;
 
 
 

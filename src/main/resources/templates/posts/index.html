@@ -8,6 +8,7 @@
     <div th:each="post : ${posts}">
         <h1><span th:text="${post.title}"></span></h1>
         <p><span th:text="${post.body}"></span></p>
+        <p th:text="${post.user.email}"></p>
         <form action="/posts/delete" method="post">
             <input type="hidden" name="deleteButton" th:value="${post.id}">
             <button>Delete</button>

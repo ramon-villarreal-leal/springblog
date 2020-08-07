@@ -20,12 +20,21 @@ public class Post {
     @JoinColumn(name = "user_id")
     private User user;
 
+    //justin called above author
+
 
     public Post(){};
 
     public Post(String title, String body) {
         this.title = title;
         this.body = body;
+
+    }
+
+    public Post(String title, String body, User user) {
+        this.title = title;
+        this.body = body;
+        this.user = user;
 
     }
 
