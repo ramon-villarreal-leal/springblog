@@ -17,11 +17,11 @@ public class EmailService {
     @Value("${spring.mail.from}")
     private String from;
 
-    public void prepareAndSend(Post post, String subject, String body) {
+    public void prepareAndSend(Post post, String title, String body) {
         SimpleMailMessage msg = new SimpleMailMessage();
         msg.setFrom(from);
         msg.setTo(post.getUser().getEmail());
-        msg.setSubject(subject);
+        msg.setSubject(title);
         msg.setText(body);
 
         try{

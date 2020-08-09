@@ -117,8 +117,8 @@ public class PostController {
         User user = usersDao.getOne(1L);
         Post post = new Post(title, body, user);
         postsDao.save(post);
+        emailService.prepareAndSend(post,  title, body);
         return "redirect:/posts";
-
     }
 
 
